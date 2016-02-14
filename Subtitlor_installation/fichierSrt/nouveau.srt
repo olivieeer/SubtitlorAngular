@@ -1,0 +1,20 @@
+1
+00:00:44,067 --> 00:00:46,251
+C'est difficile.
+
+2
+00:00:46,251 --> 00:00:48,010
+A Carnegie Mellon, ils rendaient
+
+3
+00:00:48,010 --> 00:00:51,049
+la mémorisation de nos mots de passe
+plutôt facile.
+
+4
+00:00:51,049 --> 00:00:53,449
+Jusqu'en 2009, l'exigence était
+
+5
+00:00:53,449 --> 00:00:55,828
+d'avoir un mot de passe

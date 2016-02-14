@@ -1,0 +1,20 @@
+1
+00:00:23,375 --> 00:00:26,255
+Beaucoup de gens sont irrités
+par les mots de passe,
+
+2
+00:00:26,255 --> 00:00:27,949
+c'est déjà assez compliqué
+
+3
+00:00:27,949 --> 00:00:30,593
+d'avoir un très bon mot de passe
+
+4
+00:00:30,593 --> 00:00:32,415
+dont vous pouvez vous souvenir
+
+5
+00:00:32,415 --> 00:00:35,309
+mais que personne d'autre ne peut deviner.
