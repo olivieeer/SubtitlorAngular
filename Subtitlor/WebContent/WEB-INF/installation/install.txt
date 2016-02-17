@@ -1,8 +1,0 @@
-Bonjour,
-
-Voici mon projet java EE Web Subtitlor.
-
-pour l'installation de la base de données, utlisez mon fichier subtitlor.sql qui crée la base de données contenant une seule table translatedfile.
-
-Bonne Utilisation.
-Olivier Callens

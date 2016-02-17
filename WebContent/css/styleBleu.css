@@ -3,20 +3,37 @@ body
 {
 	background-color: #aec3e0;
 }
+body, header, section, footer, nav, article, H1, H2, H3, a, P, input {
+		font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+body, header, section, footer, nav, article, P, input {
+	font-size: 16px;
+	color : black;
+}
+.well
+{
+	background-color: #668dc4;
+}
 #bloc_page
 {
     width: 100%;
     margin: auto;
     background-color: #aec3e0;
 }
+nav
+{
+	margin-left: -50px;
+}
+H1, H2, H3 {
+	text-align : center;
+	align : center;
+}
 H1 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 24px;
 	font-style: normal; 
 	font-variant: normal;
 	font-weight: bold;
 	color : black;
-	text-align : center;	 
 }
 h1.PageIndex
 {
@@ -25,8 +42,7 @@ h1.PageIndex
 }
 H3
 {
-	align : center;
-	text-align : center;
+	
 	margin : 0% 20% 0% 20%;
 	color : gray;
 }
@@ -44,7 +60,6 @@ H3 P
 H3.green
 {
 	align : center;
-	text-align : center;
 	margin : 0% 20% 0% 20%;
 	color : green;
 }
@@ -52,54 +67,33 @@ header
 {
 	margin : 2% 30% 0% 30%;
 	align : center;
-	-moz-border-radius : 8px;
-    -webkit-border-radius:8px;
-	border: 3px solid #318ce7;
 	text-align : center;
 	color : #696969;
-	border-radius: 10px 10px 10px 10px;
 }
-NAV
+header, fieldset, footer, a
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	position : fixed;
-    float: left;
-    width: 20%;
-    top : 13%;
-    color : black;
-    margin : 3% 0% 0% 0%;
-    padding : 0% 0% 0% 0%;
-    -moz-border-radius : 8px;
-    -webkit-border-radius:8px;	
+    -moz-border-radius : 10px;
+    -webkit-border-radius:10px;
     border-radius: 10px 10px 10px 10px;
+	border: 3px solid #318ce7;
 }
-NAV.navRetrieve
+ section
 {
-	margin : 3% 10px 20px 10px;
-}
-NAV.navIndex
-{
-    margin : 3% 0% 0% 0%;  
-}
-NAV.navUpload
-{
-	margin : 3% 0% 0% 0%;
-}
-nav.navEdit
-{
-	margin-top : 3%;
-}
-nav.modif
-{
-	margin-top : 3%;
-}
-section
-{
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
     padding : 0% 0% 30px 1%;
     margin : 1% 5% 10px 10%; 
 }
-input[type="text"].translatedLine {	
+input
+{
+    -moz-border-radius : 10px;
+    -webkit-border-radius:10px;
+    border-radius: 10px 10px 10px 10px;
+}
+input[type="text"]
+{
+	background-color : white;
+     width : 99%;    
+}
+/* input[type="text"].translatedLine {	
      background-color : white;
      width : 99%;    
 }
@@ -110,11 +104,10 @@ input[type="text"].translatedLine2 {
 input[type="text"].vide {	
      background-color : white;
      width : 99%;    
-}
+} */
 input[type=submit]
 {
 	display: block;
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	align : center;
  	background-color: #318ce7;
 	border: 4px solid #318ce7;	
@@ -128,7 +121,6 @@ input[type=submit]
 }
 input[type="submit"]:hover, input[type="file"]:hover
 {
-    font-size: 16px;
     font-weight : bold;
     text-decoration : underline;
     cursor:  pointer;
@@ -148,15 +140,7 @@ input[type=submit].btnExporter
 	vertical-align: top;
 	text-align : center;
 	text-decoration : none;
- 	background-color: #318ce7;
-	border: 4px solid #318ce7;
-	font-size: 16px;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	color : white;
 	width : 6%;
-    -moz-appearance: button;
 	margin-right:15%;
 }
 input[type=submit].btnNav
@@ -164,44 +148,39 @@ input[type=submit].btnNav
 	margin : 5% 0% 0% 30%;
 	width : 60%;
 }
-input[type=submit].btnUpload
+/* input[type=submit].btnUpload
 {
 	margin : 0% 20% 0% 35%;
 	width : 20%;
-}
-input[type=submit].btnEdit
+} */
+/* input[type=submit].btnEdit
 {
-	display : block;
 	margin : 0% 20% 0% 38%;
 	width : 15%;
-}
+} */
 input[type=submit].gobutton
 {
 	align:center; 
 	width: 27%; 
 	margin-left : 15%; 
 	margin-right : 40%;
-	color : white;
 }
-input[type=submit].btnDownload
+/* input[type=submit].btnDownload
 {
 	margin : 0% 35% 0% 28%;
-	font-size: 16px;
 	width : 40%;
-}
+} */
 input[type=submit].inputButtonFixedRight
 {
 	position:fixed;
 	right: 2%;
 	width : 160px;
 	height : 40px;
-	font-size: 16px;
 	margin-right : 0px;
 	vertical-align : middle;
 }
 input.[type=file]
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	align : center;
 	background-color: #7FFFD4;
 	border: 4px solid #2CC248;
@@ -212,11 +191,6 @@ input.[type=file]
 input.[type=file].inputSubmitBtn
 {
 	padding: 10px;
-	background-color: #7FFFD4;
-	border: 4px solid #2CC248;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	margin-right : 50%;
 	margin-left : 5%;
 	font-weight: bold;
@@ -224,12 +198,8 @@ input.[type=file].inputSubmitBtn
 }
 article
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
     text-align: justify;
-    font-size: 16px;
-	font-style: normal;
 	font-variant: normal;
-	font-weight: normal;
 }
 article#IdModiFichier
 {
@@ -238,91 +208,25 @@ article#IdModiFichier
     width : 20%;
     margin : 2% 2% 2% 30px;
 }
-article#articleIndex
+/* article#articleIndex
 {
 	margin : 66px 0% 0% 40px;
     width : 90%;
-}
+} */
 H2 
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: bold;
-	text-align : center;
   	color: #696969;	
   	align : center; 
 }
-body, p, legend, label, input 
-{
-    font: Tahoma 8pt, verdana 8pt normal, helvetica, sans-serif;
-    color : #696969;
-}
-fieldset
-{
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	padding : 1% 2% 0% 2%;
-    border: 3px solid #318ce7;
-    -moz-border-radius : 8px;
-    -webkit-border-radius : 8px;	
-    border-radius: 10px 10px 10px 10px;
-}
-fieldset.fieldsetIndex
-{
-	margin : 2.5% 20% 0% 23.6%;
-	padding : 2% 2% 0% 2%;
-	width : 60%;
-}
-fieldset.fieldsetEdit
-{
-	margin : 2% 20% 0% 15%;
-	 width : 70%;
-}
-fieldset.fieldsetModifSubtitle    
-{
-	margin : 2% 20% 0% 15%;
-	 width : 70%;
-}
-fieldset.fieldsetSubtitleDouble
-{
-	margin : 2% 20% 0% 15%;
-	width : 70%;
-}
-fieldset.fieldsetUpload    
-{
-	margin : 3% 20% 0% 15%;
-	 width : 70%;
-}
-fieldset.fieldsetDisplaySubtitle    
-{
-	margin : 3% 20% 0% 15%;
-	width : 70%;
-}
-fieldset.fieldsetExport    
-{
-	margin : 4% 20% 0% 23.5%;
-	width : 60%;
-}
-footer 
-{
-	align : center;
-	text-align : center;
-	margin : 4% 26% 0% 28%; 	
-	width : 61%;
-	align : center;
-	border : 2px solid #ED7F10;
-    -moz-border-radius : 8px;
-    -webkit-border-radius : 8px;	
-    border-radius : 8px;
-}
 P
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	color : black;	
-	text-align : center;
 	text-align: justify;
 }
 P.lisFichiers
@@ -337,20 +241,26 @@ P#idMessage
 {
     margin : 2% 2% 2% 2%;
 }
-table,th,td
+P.padding
+{
+	padding: 0px 15px 0px 15px;
+}
+table,th,td,tr
 {
     border-collapse: collapse;
     border-spacing : 0%;
 	border-padding : 0%;
 	align : center;
 	color : black;
+	background-color : #ccc;
 }
 table td
 {
 	spacing : 5%;
 	height :auto;
 	padding : 0%;
-	width : 50%; 
+	/* width : 50%;  */
+	background-color : #ccc;
 }
 table th
 {	
@@ -358,7 +268,7 @@ table th
 	height :auto;
 	padding : 0%;
 	width : 100px;
-	background-color : #ccc;
+ 	background-color : #ccc;
 }
 table#tabModif td
 {
@@ -371,7 +281,7 @@ table#tabEdit
 {
 	border-spacing: 0px;
 	margin : 0% 0% 2% 0%;
-    width : 100%; 
+     width : 100%;
 	border: 1px solid grey;
 }
 table#tabEdit td
@@ -412,7 +322,6 @@ table#tabRecord td
 {
 	width : 50%;
 	margin : 0% 0% 0% 0%;
-	background-color : #ccc;
 	border : 1px solid grey;
 }
 table#tabRecord td:hover
@@ -428,7 +337,7 @@ table#tabEdit td:hover
     border: 2px solid #318ce7 !important;	
     border-top: 2px solid #00BFFF;
     border-bottom: 2px solid #00BFFF;
-}
+} */
 DIV.btnEnligne P
 {	
 	vertical-align :middle;	
@@ -449,13 +358,11 @@ DIV#yourBtn
 }
 DIV#listFichier
 {
-	
 	width : 100%;
 	height : 100%;
 }
 .succes 
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 18px;
 	font-style: bold;
 	align : center;
@@ -467,9 +374,17 @@ P.echec {
 	text-align : center;
 	color : #606060;    
 	align : center;
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
  	margin : 0% 40% 0% 23%;
 	font-weight: bold;
+}
+button a {
+	color: white;
+}
+button a:hover {
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	cursor : pointer;
 }
 a
 {
@@ -485,25 +400,23 @@ a:hover
     text-decoration: underline;
     font-size: 18px;
     color: #DF6D14;
+    text-align : center;
 }
-a:hover.displaySubtitle
+a:focus, a:active
 {
-	text-decoration : none;
-	font-size : 20px;	
+  	font-size: 18px;
+    font-weight : bold;
+    text-decoration : underline;
+    cursor:  pointer;
 }
+
 a.btnContinuer, a.hautDePage, a.btnExporter
 {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	display: inline-block;
 	vertical-align: top;
-	text-align : center;
 	text-decoration : none;
  	background-color: #318ce7;
 	border: 4px solid #318ce7;		
-	font-size: 16px;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 	color : white;
 	width : 6%;
     -moz-appearance: button;
@@ -526,22 +439,13 @@ a.btnExporter
 	position: absolute;
     right: 15%;
 }
-a:hover.btnContinuer, a:focus.btnContinuer, a:active.btnContinuer
-{
-  	font-size: 16px;
-    font-weight : bold;
-    text-decoration : underline;
-    cursor:  pointer;
-}
+
 input#gobutton
 {
 	border:1px solid #33842a;
 	cursor:pointer;
 	padding:5px 25px; 
 	background:#00BFFF; 
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
 	color:#f3f3f3;
 	font-size:1.1em;
 	align : center;
@@ -549,9 +453,124 @@ input#gobutton
 }
 input#gobutton:hover, input#gobutton:focus
 {
-background-color :#399630;
--webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
-box-shadow: 0 0 1px rgba(0,0,0, .75);
+	background-color :#399630;
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+	box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+[class*="col"] {
+/* background-color: green; */
+	margin-bottom: 20px;
+}
+
+img {
+	width: 100%;
+}
+img#imgIndex
+{
+	
+}
+.block {
+	display: block;
+}
+
+.well {
+	background-color: #CCC;
+	padding: 20px;
+}
+
+[class*="col-"], footer {
+	/*background-color: #E2BC74; 
+	border: 2px solid black; */
+	border-radius: 6px;
+	line-height: 40px;
+	padding-left: 0px;
+	
+}
+
+.full button span {
+	background-color: limegreen;
+	border-radius: 32px;
+	color: black;
+}
+
+.partially button span {
+	background-color: green;
+	border-radius: 32px;
+	color: black;
+}
+
+#eventForm .form-control-feedback {
+	top: 0;
+	right: -15px;
+}
+
+label, input {
+	display: inline-block;
+}
+
+input.text {
+	margin-bottom: 12px;
+	width: 95%;
+	padding: .4em;
+}
+
+fieldset {
+	margin-top: 25px;
+}
+
+h1 {
+	font-size: 1.2em;
+	margin: .6em 0;
+}
+
+div#users-contain {
+	width: 350px;
+	margin: 20px 0;
+}
+
+div#users-contain table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+div#users-contain table td, div#users-contain table th {
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	padding: 0.3em;
+}
+.vertical-center {
+   min-height: 60%;   
+   min-height: 60vh;  
+
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center; 
+  
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center; 
 }
 </style>
