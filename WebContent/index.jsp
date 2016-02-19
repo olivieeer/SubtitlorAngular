@@ -14,10 +14,11 @@
 	rel="stylesheet"
 	integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="
 	crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <title>Bienvenue</title>
 </head>
 <jsp:include page="/css/styleBleu.css" />
-<body>
+<body ng-app="myapp">
 
 	<header>
 		<H2>Traduction de fichier de sous titre</H2>
@@ -88,6 +89,11 @@
 								</tr>
 							</table> -->
 						</article>
+						<div ng-controller="MyController" >
+    <button ng-click="myData.doClick(item, $event)">Send AJAX Request</button>
+    <br/>
+    Data from server: {{myData.lastname}}
+  </div>
 						<br />
 						<P class="padding">Les fichiers SRT sont notamment utilisés
 							pour stocker les sous-titres présents sur les DVD. Ils peuvent
@@ -105,6 +111,39 @@
 			</div>
 		</div>
 	</section>
+<script type="text/javascript">
+angular.module("myapp", [])
+.controller("MyController", function($scope, $http) {
+    $scope.myData = 
+                       {
+                    	    "id": 0,
+                    	    "firstname": "Mildred",
+                    	    "lastname": "Tyson",
+                    	    "password": "Schwartz",
+                    	    "email": "mildredschwartz@netropic.com"
+                       };
 
+    $scope.myData.doClick = function(item, event) {
+
+    	var config = angular.module('myApp.config', [])
+    	.constant('APP_NAME','Myapp')
+    	.constant('APP_VERSION','0.1')
+    	.constant('FIRST_URL','http://localhost:8080/Subtitlor/upload')
+    ;
+        var responsePromise = $http.post("/Subtitlor/upload", $scope.myData, config);
+
+        responsePromise.success(function(data, status, headers, config) {
+            $scope.myData.fromServer = data.title;
+        });
+        responsePromise.error(function(data, status, headers, config) {
+            alert("AJAX failed!");
+        });
+    }
+
+
+} );
+
+
+</script>
 </body>
 </html>

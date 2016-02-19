@@ -1,5 +1,6 @@
 package com.subtitlor.servlets;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -54,6 +55,22 @@ public class Upload extends HttpServlet {
     public void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
         String description = null;
+        StringBuffer jb = new StringBuffer();
+        String line = null;
+        try {
+            BufferedReader reader = request.getReader();
+            while ( ( line = reader.readLine() ) != null )
+                jb.append( line );
+        } catch ( Exception e ) {
+            /* report an error */ }
+        System.out.println( jb.toString() );
+        System.out.println( jb.toString() );
+        // try {
+        // // JSONObject jsonObject = JSONObject.fromObject( jb.toString() );
+        // } catch ( ParseException e ) {
+        // // crash and burn
+        // throw new IOException( "Error parsing JSON request string" );
+        // }
         if ( !ServletFileUpload.isMultipartContent( request ) ) {
             throw new ServletException( "Content type is not multipart/form-data" );
         }
