@@ -14,25 +14,32 @@
 	rel="stylesheet"
 	integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="
 	crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <title>Bienvenue</title>
 </head>
+<style>
+[class*="col-"], footer {
+    /*background-color: #E2BC74; */
+    border: 2px solid black;
+    border-radius: 6px;
+    line-height: 40px;
+}
+</style>
 <jsp:include page="/css/styleBleu.css" />
-<body>
+<body ng-app="myapp">
 
 	<header>
 		<H2>Traduction de fichier de sous titre</H2>
 	</header>
 
-	<section id="container-fluid">
-
-		<div class="row">
-			<div class="col-md-12 col-lg-12">
-				<div class="col-md-3 col-lg-3 text-center">
+	<section id="container-fluid" class="row col_sm-12 col-md-12 col-lg-12">
+			<!-- <div class="c"> -->
+				<div class="col-sm-12 col-md-3 col-lg-3 text-center">
 					<nav>
 						<%@ include file="/WEB-INF/menu.jsp"%>
 					</nav>
 				</div>
-				<div class="col-md-7 col-lg-7">
+				<div class="col-sm-12 col-md-7 col-lg-7">
 					<fieldset class="fieldsetIndex">
 						<legend>
 							<strong>les fichiers de sous titre .SRT</strong>
@@ -49,14 +56,14 @@
 							fichiers est ".srt".</P>
 						<article class="articleIndex">
 							<div class="col-md-12 col-lg-12" border="1">
-								<div class="col-md-5 col-lg-5">
+								<div class="col-sm-6 col-md-5 col-lg-5">
 									<img id="imgIndex"
 											class="img-rounded image-responsive" href="upload"
 											src="http://www.homecine-compare.com/images/lexicon/159/lex-hc-srt.png"
 											alt="Illustration du contenu d'un fichier SRT" border="0"
 											usemap="#panneaux" title="Contenu d'un fichier SRT" />
 								</div>
-								<div class="col-md-7 col-lg-7 " >
+								<div class="col-sm-6 col-md-7 col-lg-7" >
 									<form method="get" action="upload"
 											enctype="multipart/form-data">
 											<div class="text-center vertical-center" >
@@ -65,7 +72,7 @@
 											</div>
 										</form>
 								</div>
-							</div>
+							</div> 
 							
 							<!-- <table style="width: 100%;">
 								<tr>
@@ -88,6 +95,11 @@
 								</tr>
 							</table> -->
 						</article>
+	<!-- 					<div ng-controller="MyController" >
+    <button ng-click="myData.doClick(item, $event)">Send AJAX Request</button>
+    <br/>
+    Data from server: {{myData.lastname}}
+  </div> -->
 						<br />
 						<P class="padding">Les fichiers SRT sont notamment utilisés
 							pour stocker les sous-titres présents sur les DVD. Ils peuvent
@@ -102,9 +114,41 @@
 					</fieldset>
 				</div>
 				<div class="col-md-2 col-lg-2">&nbsp;</div>
-			</div>
-		</div>
+			<!-- </div> -->
 	</section>
+<!-- <script type="text/javascript">
+angular.module("myapp", [])
+.controller("MyController", function($scope, $http) {
+    $scope.myData = 
+                       {
+                    	    "id": 0,
+                    	    "firstname": "Mildred",
+                    	    "lastname": "Tyson",
+                    	    "password": "Schwartz",
+                    	    "email": "mildredschwartz@netropic.com"
+                       };
 
+    $scope.myData.doClick = function(item, event) {
+
+    	var config = angular.module('myApp.config', [])
+    	.constant('APP_NAME','Myapp')
+    	.constant('APP_VERSION','0.1')
+    	.constant('FIRST_URL','http://localhost:8080/Subtitlor/upload')
+    ;
+        var responsePromise = $http.post("/Subtitlor/upload", $scope.myData, config);
+
+        responsePromise.success(function(data, status, headers, config) {
+            $scope.myData.fromServer = data.title;
+        });
+        responsePromise.error(function(data, status, headers, config) {
+            alert("AJAX failed!");
+        });
+    }
+
+
+} );
+
+
+</script> -->
 </body>
 </html>

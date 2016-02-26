@@ -54,6 +54,20 @@ public class Upload extends HttpServlet {
     public void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
         String description = null;
+        // StringBuffer jb = new StringBuffer();
+        // String line = null;
+        // try {
+        // BufferedReader reader = request.getReader();
+        // while ( ( line = reader.readLine() ) != null )
+        // jb.append( line );
+        // System.out.println( line );
+        // } catch ( Exception e ) {
+        // /* report an error */ }
+        // System.out.println( jb.toString() );
+        // System.out.println( jb.toString() );
+        // JSONObject jsonObject = null;
+        // jsonObject = new JSONObject( jb.toString() );
+        // String essai = (String) jsonObject.get( "lastname" );
         if ( !ServletFileUpload.isMultipartContent( request ) ) {
             throw new ServletException( "Content type is not multipart/form-data" );
         }

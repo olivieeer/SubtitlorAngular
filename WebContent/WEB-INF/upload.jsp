@@ -22,7 +22,7 @@
 
 <title>Editer les sous-titres</title>
 </head>
-<body>
+<body ng-app="myapp">
 	<jsp:include page="/css/styleBleu.css" />
 
 	<header>
@@ -45,7 +45,8 @@
 								<strong>Choisir un fichier &nbsp;</strong>
 							</legend> 
 							<div id="idDisparaitre">
-							
+							      <div ng-controller = "myCtrl">
+							      	
 								<form method="post" action="upload" 
 									enctype="multipart/form-data">
 									<div class="form-group">
@@ -75,6 +76,10 @@
 										<button type="submit" class="btn btn-lg btn-primary">Uploader
 											le fichier</button>
 									</div>
+									<input type = "text" ng-model = "description1" id="description1"/>
+						         	<input type = "file" file-model = "myFile"/>
+						         	<button ng-click = "uploadFile()">upload me</button>
+						      	</div>
 								</form>
 							</div>
 							<br /> <br />
@@ -144,6 +149,55 @@
 			</div>
 		</section>
 	</div>
+<script>
+var myapp = angular.module('myapp', []);
 
+myapp.directive('fileModel', ['$parse', function ($parse) {
+   return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+         var model = $parse(attrs.fileModel);
+         var modelSetter = model.assign;
+         
+         element.bind('change', function(){
+            scope.$apply(function(){
+               modelSetter(scope, element[0].files[0]);
+            });
+         });
+      }
+   };
+}]);
+
+myapp.service('fileUpload', ['$http', function ($http) {
+   this.uploadFileToUrl = function(file, uploadUrl){
+      var fd = new FormData();
+      fd.append('file', file);
+   
+      $http.post(uploadUrl, fd, {
+         transformRequest: angular.identity,
+         headers: {'Content-Type': undefined}
+      })
+     	
+      .success(function(){
+      })
+   
+      .error(function(){
+      });
+   }
+}]);
+
+myapp.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
+   $scope.uploadFile = function(){
+      var file = $scope.myFile;
+      var description = $scope.description1;
+      console.log('file is ' );
+      console.dir(file);
+      
+      var uploadUrl = "/Subtitlor/edit";
+      fileUpload.uploadFileToUrl(file, uploadUrl);
+   };
+}]);
+
+</script>
 </body>
 </html>
